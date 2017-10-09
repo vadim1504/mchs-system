@@ -9,6 +9,16 @@ module:
    search-form: implements the from of users search  
    service: The data model and the access services to the database  
 
+command:  
+       cd rest-service:  
+create war file : mvn package -P remote  
+create jar file : mvn package -P local  
+       cd search-from:  
+create war file : mvn package -P remote  
+create jar file : mvn package -P local  
+       cd services:  
+create liquibase-outputChangeLog.xml: mvn liquibase:generateChangeLog  
+
 example json request message:
 {
         "id":1,
