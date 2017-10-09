@@ -39,7 +39,11 @@ public class UserController {
 
     @GetMapping(params = {"id"},produces = {MediaType.APPLICATION_JSON_VALUE} )
     ResponseEntity<User> getUserById(@RequestParam(value = "id") Integer id) {
-        return userService.getUser(id).map(msg -> new ResponseEntity<>(msg, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        User user = userService.getUser(id);
+        if (user==null){
+            new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     @DeleteMapping(params = {"id"})

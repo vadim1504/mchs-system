@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="vadim (generated)" id="1507579065284-1">
+        <createTable tableName="calls">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_tower" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_user" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="time_call" type="time"/>
+            <column name="distance" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_call" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1507579065284-2">
+        <createTable tableName="users">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="number" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordinate_x" type="DOUBLE"/>
+            <column name="coordinate_y" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vadim (generated)" id="1507579065284-3">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="users"/>
+    </changeSet>
+</databaseChangeLog>

@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface CallService {
 
     List<Call> allCall();
-    Optional<Call> getCall(int id);
+    Call getCall(int id);
     void saveCall(Call call) throws CallDuplicate;
     void updateCall(Call call) throws CallNotFound;
     void deleteCall(int id) throws CallNotFound;

@@ -13,7 +13,7 @@ public interface UserService {
     List<User> getUserByLastName(String last);
     List<User> getUserByNumber(String number);
     List<User> getUserByRangeCoordinate(double x1,double x2,double y1,double y2);
-    Optional<User> getUser(int id);
+    User getUser(int id);
     void saveUser(User user);
     void updateUser(User user) throws UserNotFound;
     void deleteUser(int id) throws UserNotFound;

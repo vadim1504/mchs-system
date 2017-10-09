@@ -19,13 +19,6 @@ public class JMSApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(JMSApplication.class, args);
-//        ConfigurableApplicationContext context = SpringApplication.run(JMSApplication.class, args);
-//        JmsTemplate jmsTemplate = context.getBean(JmsTemplate.class);
-//        while (true) {
-//            jmsTemplate.convertAndSend("OrderTransactionQueue", new Message(1, 1, "a", "b", "1", 1, new Time(10000), 5000));
-//            jmsTemplate.convertAndSend("OrderTransactionQueue", new Message(2, 1, "a", "b", "1", 1, new Time(10000), 1000));
-//            jmsTemplate.convertAndSend("OrderTransactionQueue", new Message(3, 1, "a", "b", "1", 1, new Time(10000), 3000));
-//        }
     }
 
     @Bean

@@ -25,8 +25,8 @@ public class CallServiceImpl implements CallService {
 
     @Override
     @Transactional
-    public Optional<Call> getCall(int id) {
-        return callRepository.findById(id);
+    public Call getCall(int id) {
+        return callRepository.findOne(id);
     }
 
     @Override

@@ -39,7 +39,11 @@ public class CallController {
 
     @GetMapping(params = {"id"},produces = {MediaType.APPLICATION_JSON_VALUE} )
     ResponseEntity<Call> getCallById(@RequestParam(value = "id") Integer id) {
-        return callServiceImpl.getCall(id).map(msg -> new ResponseEntity<>(msg, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        Call call = callServiceImpl.getCall(id);
+        if(call==null){
+            new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(call, HttpStatus.OK);
     }
 
     @DeleteMapping(params = {"id"})
