@@ -53,9 +53,9 @@
         for(var i=0;select.options.length;i++){
             if(select.options[i].selected){
                 if(i===3)
-                    xhr.open('GET', 'http://localhost:8081/user?x1='+x1.value+"&x2="+x2.value+"&y1="+y1.value+"&y2="+y2.value, true);
+                    xhr.open('GET', 'http://localhost:8080/user?x1='+x1.value+"&x2="+x2.value+"&y1="+y1.value+"&y2="+y2.value, true);
                 else
-                xhr.open('GET', 'http://localhost:8081/user?'+select.options[i].value+"="+text.value, true);
+                xhr.open('GET', 'http://localhost:8080/user?'+select.options[i].value+"="+text.value, true);
                 xhr.send();
                 xhr.onreadystatechange = function () {
                     if (this.readyState !==4) return;

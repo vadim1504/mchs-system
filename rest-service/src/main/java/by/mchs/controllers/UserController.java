@@ -66,7 +66,7 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @CrossOrigin(value = "http://localhost:8080")
+    @CrossOrigin(value = "http://localhost:8081")
     @GetMapping(params = {"first_name"}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<List<User>> searchUserByFirstName(@RequestParam(value = "first_name", defaultValue = "") String firstName) {
         List<User> users = userService.getUserByFirstName(firstName);
@@ -76,7 +76,7 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @CrossOrigin(value = "http://localhost:8080")
+    @CrossOrigin(value = "http://localhost:8081")
     @GetMapping(params = {"last_name"}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<List<User>> searchUserByLastName(@RequestParam(value = "last_name", defaultValue = "") String lastName) {
         List<User> users = userService.getUserByLastName(lastName);
@@ -86,7 +86,7 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @CrossOrigin(value = "http://localhost:8080")
+    @CrossOrigin(value = "http://localhost:8081")
     @GetMapping(params = {"number"}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<List<User>> searchUserByNumber(@RequestParam(value = "number", defaultValue = "") String number) {
         List<User> users = userService.getUserByNumber(number);
@@ -96,7 +96,7 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @CrossOrigin(value = "http://localhost:8080")
+    @CrossOrigin(value = "http://localhost:8081")
     @GetMapping(params = {"x1","x2","y1","y2"}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<List<User>> searchUserByRangeCoordinate(@RequestParam(value = "x1", defaultValue = "0") Double x1,@RequestParam(value = "x2", defaultValue = "10000") Double x2,
                                                            @RequestParam(value = "y1", defaultValue = "0") Double y1,@RequestParam(value = "y2", defaultValue = "10000") Double y2) {
