@@ -14,6 +14,9 @@ command:
 create war file : mvn package -P remote  
 create jar file : mvn package -P local  
        cd search-from:  
+install node and npm: mvn frontend:install-node-and-npm
+install npm: mvn frontend:npm
+webpack: mvn frontend:webpack
 create war file : mvn package -P remote  
 create jar file : mvn package -P local  
        cd services:  
