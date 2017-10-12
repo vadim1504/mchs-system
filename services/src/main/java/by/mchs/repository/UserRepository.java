@@ -1,4 +1,4 @@
-package by.mchs.reposotory;
+package by.mchs.repository;
 
 import by.mchs.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

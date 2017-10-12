@@ -2,13 +2,12 @@ package by.mchs.service;
 
 import by.mchs.exception.UserNotFound;
 import by.mchs.model.User;
-import by.mchs.reposotory.UserRepository;
+import by.mchs.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {

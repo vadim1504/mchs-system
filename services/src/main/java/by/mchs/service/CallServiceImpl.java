@@ -3,13 +3,12 @@ package by.mchs.service;
 import by.mchs.exception.CallDuplicate;
 import by.mchs.exception.CallNotFound;
 import by.mchs.model.Call;
-import by.mchs.reposotory.CallRepository;
+import by.mchs.repository.CallRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CallServiceImpl implements CallService {
