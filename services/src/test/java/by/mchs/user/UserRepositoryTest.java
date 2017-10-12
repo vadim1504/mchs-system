@@ -37,25 +37,25 @@ public class UserRepositoryTest {
 
     @Test
     public void shouldFetchUserByFirstName(){
-        List<User> users = userRepository.getUserByFirstName("first_name");
+        List<User> users = userRepository.getUserByFirstName(user.getFirstName());
         assertThat(users.get(0).getFirstName(), is(user.getFirstName()));
     }
 
     @Test
     public void shouldFetchUserByLastName(){
-        List<User> users = userRepository.getUserByLastName("last_name");
+        List<User> users = userRepository.getUserByLastName(user.getLastName());
         assertThat(users.get(0).getLastName(), is(user.getLastName()));
     }
 
     @Test
     public void shouldFetchUserByNumber(){
-        List<User> users = userRepository.getUserByNumber("1234567");
+        List<User> users = userRepository.getUserByNumber(user.getNumber());
         assertThat(users.get(0).getNumber(), is(user.getNumber()));
     }
 
     @Test
     public void shouldFetchUserByCoordinate(){
-        List<User> users = userRepository.getUserByRangeCoordinate(999,1001,4999,5001);
+        List<User> users = userRepository.getUserByRangeCoordinate(user.getCoordinateX()-1,user.getCoordinateX()+1,user.getCoordinateY()-1,user.getCoordinateY()+1);
         assertThat(users.get(0).getCoordinateX(), is(user.getCoordinateX()));
         assertThat(users.get(0).getCoordinateY(), is(user.getCoordinateY()));
     }
